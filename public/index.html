@@ -1,0 +1,148 @@
+<!--
+  Name: Ryan Le, Robin Luo
+  Date: December 10th, 2021
+  Section: CSE 154 AE and AB
+
+  This is the index.html for Final Project. It is an E-commerce website of a Bakery called Bear
+  Bakerie! It provides the core template for website through a main and compact view for items,
+  nav for displaying different views, aside bar for filtering, an account sign-up and sign-in view,
+  account details, and transaction screen.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Bear Bakerie</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="img/x-icon" href="img/favicon.ico">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <nav id="nav">
+      <button id="open">filter</button>
+      <button class="home-btn">home</button>
+      <section>
+        <input id="search-bar">
+        <button id="search-btn">search</button>
+      </section>
+      <button id="account-btn">account</button>
+      <button id="cart-btn">cart</button>
+    </nav>
+    <aside id="aside">
+      <ul>
+        <li>
+          <p id="close">&times;</p>
+        </li>
+        <li>
+          <p class="home-btn">home</p>
+        </li>
+        <li id="bread">
+          <img src="img/bread.png" alt="bread">
+          <p>breads</p>
+        </li>
+        <li id="cakes">
+          <img src="img/cake.png" alt="cake">
+          <p>cakes</p>
+        </li>
+        <li id="drinks">
+          <img src="img/mocha.png" alt="mocha">
+          <p>drinks</p>
+        </li>
+        <li id="pastries">
+          <img src="img/classic-mf-icon.png" alt="mille feuille">
+          <p>pastries</p>
+        </li>
+        <li id="high-rating">
+          <img src="img/full-heart-icon.png" alt="full heart">
+          <p>+4 rating</p>
+        </li>
+      </ul>
+    </aside>
+    <main id="main">
+      <header>
+        <img src="img/logo.png" alt="bear bakerie logo">
+        <h1>bear bakerie</h1>
+        <button id="compact-btn">menu list</button>
+      </header>
+
+      <section id="home">
+        <section id="food" class="flex">
+          <!-- menu cards go here -->
+        </section>
+      </section>
+
+      <section id="compact" class="flex hidden">
+        <article class="double">
+          <h2>Menu:</h2>
+          <ul id="menu">
+            <!-- menu -->
+          </ul>
+        </article>
+      </section>
+
+      <section id="account" class="flex hidden">
+        <form id="login">
+          <h1>Login</h1>
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" required><br>
+          <hr>
+          <label for="pwd">Password:</label><br>
+          <input type="password" id="pwd" name="pwd" required>
+          <input type="submit" value="Sign In">
+          <input type="button" id="sign-up-button" value="Sign Up">
+          <input type="reset">
+        </form>
+        <form id="sign-up" class="hidden">
+          <h1>Sign up</h1>
+          <label for="new-name">Username:</label><br>
+          <input type="text" id="new-name" name="username" required><br>
+          <hr>
+          <label for="new-password">Password:</label><br>
+          <input type="password" id="new-password" name="new-password" required>
+          <hr>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required>
+          <input type="submit" value="Sign Up">
+          <input type="button" id="sign-in-button" value="Sign In">
+          <input type="reset">
+        </form>
+        <article id="user-page" class="hidden double">
+          <h2>User Info: <span id="user-info"></span></h2>
+          <p>Remaining Balance: $<span id="remaining-balance"></span></p>
+          <button id="logout">Log Out</button>
+          <button id="money">Add 100$</button>
+          <p>Purchase History: </p>
+          <section id="purchase-history">
+          </section>
+        </article>
+      </section>
+      <section id="cart" class="flex hidden">
+        <article id="cart-card" class="double">
+          <h2>Cart</h2>
+          <p id="empty">Your Cart is Empty</p>
+          <section id="cart-list"></section>
+          <p>Subtotal: $<span id="subtotal">0.00</span></p>
+          <input id="checkout" type="submit" value="Proceed to Checkout" class="hidden">
+          <input id="confirm" type="submit" value="Confirm Purchase" class="hidden">
+          <button id="redirect">Please Sign In For Checkout and Save Cart</button>
+        </article>
+        <article id="thanks" class="hidden">
+          <h2>Thank You for Shopping With Us!</h2>
+          <h2>Your Purchase ID: <span id="pid"></span></h2>
+        </article>
+        <article id="failure" class="hidden">
+          <h2>Transaction Declined! Subtotal is greater than Account Balance</h2>
+        </article>
+      </section>
+      <section id="item">
+        <!-- display selected item here -->
+      </section>
+    </main>
+    <section id="error" class="hidden">
+      <h2>An unexpected error has occurred! Please check back Later!</h2>
+    </section>
+  </body>
+</html>
