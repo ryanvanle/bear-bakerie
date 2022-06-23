@@ -377,7 +377,11 @@ async function getDBConnection() {
     password: "ec6635a482ba9978aa0e6a0e5263d9a134100970889d33962d3468b974a2f7a2",
     host: "ec2-23-23-151-191.compute-1.amazonaws.com",
     port: 5432,
-    database: "posd4t1evbi0dhofntgres"
+    database: "posd4t1evbi0dhofntgres",
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
   })
   db.connect();
   return db;
