@@ -373,11 +373,11 @@ async function generateUniquePurchaseID() {
  */
 async function getDBConnection() {
   const db = new Client({
-    user: "ryanle",
-    password: "1",
-    host: "localhost",
+    user: "idsoneyrvpiyyv",
+    password: "ec6635a482ba9978aa0e6a0e5263d9a134100970889d33962d3468b974a2f7a2",
+    host: "ec2-23-23-151-191.compute-1.amazonaws.com",
     port: 5432,
-    database: "postgres"
+    database: "posd4t1evbi0dhofntgres"
   })
   db.connect();
   return db;
